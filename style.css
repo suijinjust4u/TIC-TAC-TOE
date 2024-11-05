@@ -1,0 +1,121 @@
+/* Global Styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    animation: backgroundAnimation 10s ease infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    }
+    50% {
+        background: linear-gradient(135deg, #acb6e5, #74ebd5);
+    }
+    100% {
+        background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    }
+}
+
+/* Game Container */
+#gameContainer {
+    display: none; /* Initially hidden */
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Correct Grid setup for 3x3 */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */
+    grid-template-rows: repeat(3, 1fr);     /* 3 equal rows */
+    gap: 10px;  /* Space between cells */
+    width: 320px;  /* Ensure the grid has a fixed width */
+    height: 320px; /* Ensure the grid has a fixed height */
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    font-size: 2em;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.cell.X {
+    color: #ff5733;
+    animation: pulse 0.5s ease;
+}
+
+.cell.O {
+    color: #337ab7;
+    animation: pulse 0.5s ease;
+}
+
+.cell:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* Pulse Animation for X and O */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Status Display */
+#status {
+    font-size: 1.5em;
+    margin: 20px 0;
+    color: #fff;
+}
+
+/* Menu Styles */
+#gameModeSelection,
+#playerSelection {
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+#resetBtn {
+    background-color: #dc3545;
+}
+
+#resetBtn:hover {
+    background-color: #c82333;
+}
